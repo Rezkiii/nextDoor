@@ -1,0 +1,179 @@
+body {  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    height: 100vh;  
+    margin: 0;  
+    font-family: 'Bebas Neue', Arial, sans-serif;  
+    background-color: #f0f0f0;  
+}  
+  
+#text-container {  
+    font-size: 5em; /* Increased font size */  
+    color: #333;  
+    text-align: center;  
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Optional: Add a subtle glow effect */  
+    margin-top: 20px; /* Add some margin for spacing */  
+}  
+  
+#start-button {  
+    font-family: 'Bebas Neue', Arial, sans-serif;  
+    font-size: 2em;  
+    color: white;  
+    background: linear-gradient(45deg, #ff6b6b, #ff3399); /* Gradient background */  
+    border: none;  
+    border-radius: 10px; /* Rounded corners */  
+    padding: 15px 30px;  
+    cursor: pointer;  
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */  
+    transition: background 0.3s ease, transform 0.3s ease; /* Smooth transition */  
+}  
+  
+#start-button:hover {  
+    background: linear-gradient(45deg, #ff3399, #ff6b6b); /* Reverse gradient on hover */  
+    transform: scale(1.05); /* Slightly enlarge on hover */  
+}  
+  
+#start-button:active {  
+    transform: scale(0.95); /* Slightly shrink when clicked */  
+}  
+
+/* Tambahkan class untuk efek gradien */
+.gradient-text {
+    background: linear-gradient(90deg, #333, #ff6b6b, #333);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientAnimation 2s linear infinite;
+}
+
+/* Animasi untuk menggerakkan gradien */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: -100% 0;
+    }
+}
+
+.white {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1; /* Send it behind other elements */
+}
+
+
+
+.white:before { 
+  z-index: 1000;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40vh;
+  background-image: linear-gradient(-180deg, #ffffff13 0%, rgba(255,255,255,0.00) 100%);
+}
+
+.white:after { 
+  z-index: 1000;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40vh;
+  background-image: linear-gradient(0deg, #ebebeb3b 0%, rgba(235,235,235,0.00) 100%);
+}
+
+.squares {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+}
+
+.square {
+  animation: squares 9.5s linear infinite;
+  align-self: flex-end;
+  width: 1em;
+  height: 1em;
+  transform: translateY(100%);
+  background: #ebebeb;  
+}
+
+.square:nth-child(2) { 
+  height: 1.5em;  
+  width: 3em;   
+  animation-delay: 1s;
+  animation-duration: 17s; 
+  -webkit-filter: blur(5px);
+}
+
+.square:nth-child(3) { 
+  height: 2em;    
+  width: 1em;   
+  animation-delay: 1.5s;
+  animation-duration: 8s; 
+}
+
+.square:nth-child(4) { 
+  height: 1em;    
+  width: 1.5em; 
+  animation-delay: 0.5s;
+  -webkit-filter: blur(3px);
+  animation-duration: 13s;
+}
+
+.square:nth-child(5) { 
+  height: 1.25em; 
+  width: 2em;   
+  animation-delay: 4s;
+  -webkit-filter: blur(2px);
+  animation-duration: 11s;
+}
+
+.square:nth-child(6) { 
+  height: 2.5em;  
+  width: 2em;   
+  animation-delay: 2s;
+  -webkit-filter: blur(1px);
+  animation-duration: 9s;
+}
+
+.square:nth-child(7) { 
+  height: 5em;    
+  width: 2em;   
+  -webkit-filter: blur(2.5px);
+  animation-duration: 12s;
+}
+
+.square:nth-child(8) { 
+  height: 1em;    
+  width: 3em;   
+  animation-delay: 5s;
+  -webkit-filter: blur(6px);
+  animation-duration: 18s;
+}
+
+.square:nth-child(9) {
+  height: 3em;
+  width: 2.4em;
+  animation-delay: 6s;
+  -webkit-filter: blur(0.5px);
+  animation-duration: 12s;
+}
+
+@keyframes squares { 
+  from { 
+    transform: translateY(100%) rotate(-50deg);
+  }
+  to { 
+    transform: translateY(calc(-100vh + -100%)) rotate(20deg);
+  }
+}
